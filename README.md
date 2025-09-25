@@ -4,7 +4,7 @@ Ever wondered if you can teach a computer to read and understand DNA? This proje
 
 This isn't just about getting a prediction; it's about using the model's internal "attention" mechanism to understand *why* it made its decision, highlighting the key DNA motifs that are biologically significant.
 
-## \#\# Key Features
+## Key Features
 
   * **Promoter Classification:** A binary classifier that distinguishes between promoter and non-promoter DNA sequences.
   * **State-of-the-Art Model:** Leverages a pre-trained **DNABERT** model, which understands the "language" of genomics.
@@ -13,23 +13,23 @@ This isn't just about getting a prediction; it's about using the model's interna
 
 -----
 
-## \#\# How It Works
+## How It Works
 
 The model treats DNA as a language. A raw DNA sequence like `GATTACA...` is broken down into overlapping "words" of 6 letters (6-mers) by a specialized tokenizer. The pre-trained DNABERT model, which has already learned the fundamental grammar of DNA from massive genomic databases, is then fine-tuned on our specific task of promoter identification. This approach is highly effective and requires significantly less training time than starting from scratch.
 
 -----
 
-## \#\# Getting Started
+## Getting Started
 
 Follow these steps to get the project up and running on your local machine.
 
-### \#\#\# Prerequisites
+### Prerequisites
 
   * Python 3.8+
   * PyTorch
   * A CUDA-enabled GPU is highly recommended for training.
 
-### \#\#\# Installation
+### Installation
 
 1.  **Clone the repository:**
 
@@ -53,11 +53,11 @@ Follow these steps to get the project up and running on your local machine.
 
 -----
 
-## \#\# Usage
+## Usage
 
 The main script for training the model is `fine_tune_train.py`.
 
-### \#\#\# Training the Model
+### Training the Model
 
 To start fine-tuning the DNABERT model on the promoter dataset, run the following command in your terminal:
 
@@ -67,7 +67,7 @@ python fine_tune_train.py
 
 The script will handle data preprocessing, training, and evaluation. It will print the progress for each epoch and save the best performing model weights as `dnabert_promoter_best_model.bin`.
 
-### \#\#\# Making Predictions with the Trained Model
+### Making Predictions with the Trained Model
 
 Once training is complete, you can easily use the saved model to make predictions on new DNA sequences. Here's a quick example snippet:
 
@@ -88,7 +88,7 @@ print(f"Confidence: {confidence:.4f}")
 
 -----
 
-## \#\# Future Work
+## Future Work
 
 This project is a great foundation. Here are a few ideas for extending it:
 
