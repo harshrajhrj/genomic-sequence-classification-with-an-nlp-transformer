@@ -37,8 +37,15 @@ Follow these steps to get the project up and running on your local machine.
     git clone https://github.com/harshrajhrj/genomic-sequence-classification-with-an-nlp-transformer.git
     cd genomic-sequence-classification-with-an-nlp-transformer
     ```
+    
+2.  **Install dependencies:**
+    It's recommended to use a virtual environment.
 
-2.  **Download the dataset:**
+    ```bash
+    pip install -r requirements.txt
+    ```
+
+3.  **Download the dataset:**
     This project uses the "Human Gene Promoter and Non-Promoter Sequences" dataset.
 
       * Download it from [Kaggle](https://www.kaggle.com/datasets/zakarii/promoter-nonpromotor-dna-sequences).
@@ -52,14 +59,6 @@ Follow these steps to get the project up and running on your local machine.
         python util.py
         python merge_csv.py
         ```
-
-3.  **Install dependencies:**
-    It's recommended to use a virtual environment.
-
-    ```bash
-    cd model
-    pip install -r requirements.txt
-    ```
 
 -----
 
