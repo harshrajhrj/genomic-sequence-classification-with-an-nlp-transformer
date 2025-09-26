@@ -82,19 +82,35 @@ The script will handle data preprocessing, training, and evaluation. It will pri
 
 Once training is complete, you can easily use the saved model to make predictions on new DNA sequences. Here's a quick example snippet:
 
+#### Prediction
 ```python
-# (You'll need to have the model, tokenizer, and label_encoder loaded)
+# Example of a real human promoter sequence (from TATA-box)
+promoter_example = "cgcgcccgcgccgcatatacgcgtatatacgcgtatacgcgtatacgcgtacgcgta"
 
-# Your new DNA sequence
-new_sequence = "cgcgcccgcgccgcatatacgcgtatatacgcgtatacgcgtatacgcgtacgcgta"
+# Example of a random, non-promoter-like sequence
+non_promoter_example = "atcgatcgatcgatcgatcgatcgatcgatcgatcgatcgatcgatcgatcgatc"
 
-# Use a prediction function to get the result
-# (See the implementation in `test_model.py` for a full example)
-label, confidence = predict_sequence(new_sequence, model, tokenizer)
 
-print(f"Sequence: {new_sequence[:30]}...")
-print(f"Predicted Label: {label}")
+pred_label, confidence = predict_sequence(promoter_example)
+print(f"Sequence: {promoter_example[:30]}...")
+print(f"Predicted Label: {pred_label}")
+print(f"Confidence: {confidence:.4f}\n")
+
+
+pred_label, confidence = predict_sequence(non_promoter_example)
+print(f"Sequence: {non_promoter_example[:30]}...")
+print(f"Predicted Label: {pred_label}")
 print(f"Confidence: {confidence:.4f}")
+```
+#### Output
+```text
+Sequence: cgcgcccgcgccgcatatacgcgtatatac...
+Predicted Label: Non-Promoter
+Confidence: 0.8672
+
+Sequence: atcgatcgatcgatcgatcgatcgatcgat...
+Predicted Label: Non-Promoter
+Confidence: 0.8747
 ```
 
 -----
