@@ -37,7 +37,7 @@ Follow these steps to get the project up and running on your local machine.
     git clone https://github.com/harshrajhrj/genomic-sequence-classification-with-an-nlp-transformer.git
     cd genomic-sequence-classification-with-an-nlp-transformer
     ```
-    
+
 2.  **Install dependencies:**
     It's recommended to use a virtual environment.
 
@@ -52,7 +52,7 @@ Follow these steps to get the project up and running on your local machine.
       * Download the files
         - `NonPromoterSequence.txt`
         - `PromoterSequence.txt`
-      * Place these files in the `dataset` directory.
+      * Create `dataset` folder under root directory and place these files in the `dataset` directory.
       * Run the following command to convert the raw text files into CSV format:
         ```bash
         cd utils
