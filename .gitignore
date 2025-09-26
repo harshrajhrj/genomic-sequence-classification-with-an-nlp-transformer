@@ -208,3 +208,5 @@ __marimo__/
 
 # Custom
 model/*.bin
+dataset/*.csv
+dataset/*.txt
