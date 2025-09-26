@@ -42,12 +42,22 @@ Follow these steps to get the project up and running on your local machine.
     This project uses the "Human Gene Promoter and Non-Promoter Sequences" dataset.
 
       * Download it from [Kaggle](https://www.kaggle.com/datasets/zakarii/promoter-nonpromotor-dna-sequences).
-      * Unzip the file and place `promoters.csv` in the root directory of this project.
+      * Download the files
+        - `NonPromoterSequence.txt`
+        - `PromoterSequence.txt`
+      * Place these files in the `dataset` directory.
+      * Run the following command to convert the raw text files into CSV format:
+        ```bash
+        cd utils
+        python util.py
+        python merge_csv.py
+        ```
 
 3.  **Install dependencies:**
     It's recommended to use a virtual environment.
 
     ```bash
+    cd model
     pip install -r requirements.txt
     ```
 
@@ -55,14 +65,15 @@ Follow these steps to get the project up and running on your local machine.
 
 ## Usage
 
-The main script for training the model is `fine_tune_train.py`.
+The main script for training the model is `train.py`.
 
 ### Training the Model
 
 To start fine-tuning the DNABERT model on the promoter dataset, run the following command in your terminal:
 
 ```bash
-python fine_tune_train.py
+cd model
+python train.py --epochs 5 --batch_size 32 --learning_rate 2e-5
 ```
 
 The script will handle data preprocessing, training, and evaluation. It will print the progress for each epoch and save the best performing model weights as `dnabert_promoter_best_model.bin`.
